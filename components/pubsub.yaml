@@ -1,0 +1,16 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: messagebus
+spec:
+  type: pubsub.kafka
+  version: v1
+  metadata:
+  - name: brokers
+    value: "kafka:9092"
+  - name: consumerGroup
+    value: "your-consumer-group"
+  - name: authType
+    value: "none"
+  - name: maxMessageBytes
+    value: "1000000"
